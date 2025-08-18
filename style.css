@@ -68,8 +68,8 @@ body {
 }
 
 .profile-photo {
-    width: 280px;
-    height: 280px;
+    width: 350px;
+    height: 350px;
     object-fit: cover;
     display: block;
     margin-bottom: 15px;
@@ -271,8 +271,8 @@ body {
     }
     
     .profile-photo {
-        width: 200px;
-        height: 200px;
+        width: 220px;
+        height: 220px;
     }
     
     .name {
