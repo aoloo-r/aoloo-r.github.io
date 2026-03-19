@@ -3,6 +3,7 @@
 import AnimateIn from "./AnimateIn";
 
 const updates = [
+  { date: "Mar 2026", text: "Submitted to IROS 2026: Robot Planning and Situation Handling with Active Perception" },
   { date: "Jan 2026", text: "Teaching Assistant for Intelligent Mobile Robotics" },
   { date: "Dec 2025", text: "Successfully defended my Master\u2019s thesis" },
   {
