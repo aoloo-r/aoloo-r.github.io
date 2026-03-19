@@ -7,6 +7,7 @@ import {
   Github,
   Linkedin,
   Twitter,
+  GoogleScholar,
   FileText,
   ChevronDown,
 } from "./Icons";
@@ -80,6 +81,7 @@ export default function Hero() {
               { href: "mailto:aoloo@binghamton.edu", icon: <Mail />, title: "Email" },
               { href: "https://github.com/aoloo-r", icon: <Github />, title: "GitHub" },
               { href: "https://www.linkedin.com/in/aoloo-r-oloo", icon: <Linkedin />, title: "LinkedIn" },
+              { href: "https://scholar.google.com/citations?user=LYSMcY0AAAAJ&hl=en&authuser=1", icon: <GoogleScholar />, title: "Google Scholar" },
               { href: "https://x.com/aoloo_r?s=11", icon: <Twitter />, title: "Twitter/X" },
             ].map((l) => (
               <a
