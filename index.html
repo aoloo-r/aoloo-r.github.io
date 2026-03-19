@@ -3,94 +3,293 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Austine Oloo</title>
+    <title>Austine R. Oloo &mdash; Embodied AI Researcher</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar">
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#home" class="nav-link active">Home</a>
-            <a href="#updates" class="nav-link">Updates</a>
-            <a href="#research" class="nav-link">Research</a>
+            <a href="#" class="nav-logo">
+                <span class="logo-bracket">{</span>AO<span class="logo-bracket">}</span>
+            </a>
+            <div class="nav-links" id="navLinks">
+                <a href="#home" class="nav-link active" data-section="home">
+                    <span class="nav-link-dot"></span>About
+                </a>
+                <a href="#research" class="nav-link" data-section="research">
+                    <span class="nav-link-dot"></span>Research
+                </a>
+                <a href="#publications" class="nav-link" data-section="publications">
+                    <span class="nav-link-dot"></span>Publications
+                </a>
+                <a href="#updates" class="nav-link" data-section="updates">
+                    <span class="nav-link-dot"></span>Updates
+                </a>
+            </div>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                    <svg class="sun-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    <svg class="moon-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
     </nav>
 
-    <div class="container">
-        <section id="home" class="main-section">
-            <div class="profile-layout">
-                <div class="profile-image">
-                    <img src="me.jpg" alt="Your Name" class="profile-photo">
-                </div>
-                
-                <div class="profile-content">
-                    <h1 class="name">Austine R. Oloo</h1>
-                    
-                    <div class="bio">
-                        <p>I am a Computer Science PhD student at <a href="https://www.binghamton.edu/" target="_blank">Binghamton University</a> specializing in <strong>Embodied AI</strong>. My research aims to bridge the gap between high-level symbolic reasoning and low-level sensorimotor control. I am passionate about applying this research to enable more effective and intuitive Human-Robot Interaction, with the goal of creating robotic systems that can collaborate safely and naturally with people in shared workspaces. I am also actively exploring how modern foundation models can be grounded in robotic systems to serve as more powerful interfaces for perception and action.</p>
-                        
-                        <p>I'm fortunate to be advised by Professor <a href="https://www.cs.binghamton.edu/~szhang/" target="_blank">Shiqi Zhang</a>.</p>
-                        
-                    </div>
-                    
-                    <div class="social-links">
-                        <a href="cv.pdf">CV</a> /
-                        <a href="https://x.com/aoloo_r?s=11" target="_blank">Twitter</a> /
-                        <a href="https://github.com/aoloo-r" target="_blank">Github</a> /
-                        <a href="https://www.linkedin.com/in/aoloo-r-oloo" target="_blank">LinkedIn</a> /
-                        <a href="mailto:aoloo@binghamton.edu">Email</a>
+    <!-- Hero -->
+    <section id="home" class="hero">
+        <div class="hero-bg-grid"></div>
+        <div class="hero-container">
+            <div class="hero-left" data-animate="fade-right">
+                <div class="hero-photo-card">
+                    <div class="photo-glow"></div>
+                    <img src="me.jpg" alt="Austine R. Oloo" class="hero-photo">
+                    <div class="photo-status">
+                        <span class="status-dot"></span>
+                        Open to collaborations
                     </div>
                 </div>
-            </div>
-        </section>
-
-        <section id="updates" class="updates-section">
-            <h2>Updates</h2>
-            <div class="updates-list">
-                <div class="update-item">
-                    <span class="update-date">Jan 2026</span>
-                    <span class="update-text">Teaching Assistant for Intelligent Mobile Robotics</span>
-                </div>
-                <div class="update-item">
-                    <span class="update-date">Dec 2025</span>
-                    <span class="update-text">Successfully defended my Master's thesis</span>
-                </div>
-                <div class="update-item">
-                    <span class="update-date">Aug 2025</span>
-                    <span class="update-text">Teaching Assistant for <a href="https://www.cs.binghamton.edu/~szhang/teaching/25fall-ai/index.html" target="_blank">Introduction to AI</a>, </span>
-                </div>
-                <div class="update-item">
-                    <span class="update-date">Aug 2025</span>
-                    <span class="update-text">Started PhD in Computer Science at <a href="https://www.binghamton.edu/" target="_blank">Binghamton University</a>, advised by <a href="https://www.cs.binghamton.edu/~szhang/" target="_blank">Prof. Shiqi Zhang</a></span>
-                </div>
-                <div class="update-item">
-                    <span class="update-date">Feb 2025</span>
-                    <span class="update-text">Successfully demonstrated autonomous robot navigation system in complex indoor environments</span>
-                </div>
-                <div class="update-item">
-                    <span class="update-date">Aug 2024</span>
-                    <span class="update-text">Started MSc in Computer Science program at <a href="https://www.binghamton.edu/" target="_blank">Binghamton University</a></span>
+                <div class="hero-quick-links">
+                    <a href="mailto:aoloo@binghamton.edu" class="quick-link" title="Email">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                    </a>
+                    <a href="https://github.com/aoloo-r" target="_blank" class="quick-link" title="GitHub">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                    <a href="https://www.linkedin.com/in/aoloo-r-oloo" target="_blank" class="quick-link" title="LinkedIn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                    </a>
+                    <a href="https://x.com/aoloo_r?s=11" target="_blank" class="quick-link" title="Twitter/X">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                    </a>
                 </div>
             </div>
-        </section>
 
-        <section id="research" class="research-section">
-            <h2>Research</h2>
-             <div class="research-item">
-                <h3 class="paper-title">VLM-Grounded Task and Motion Planning With Uncertainty Aware Active Perception</h3>
-                <p class="authors">
-                    <strong>Austine Oloo</strong>
-                    <a href="#" target="_blank">Shiqi Zhang</a>
+            <div class="hero-right" data-animate="fade-left">
+                <div class="hero-intro">
+                    <span class="intro-line"></span>
+                    <span class="intro-text">PhD Student &middot; Embodied AI</span>
+                </div>
+                <h1 class="hero-name">
+                    <span class="name-line">Austine R.</span>
+                    <span class="name-line name-highlight">Oloo</span>
+                </h1>
+                <div class="hero-affiliation">
+                    <a href="https://www.binghamton.edu/" target="_blank">Binghamton University</a>
+                    <span class="aff-divider">/</span>
+                    Computer Science
+                </div>
+
+                <div class="hero-bio-card">
+                    <p>I am a Computer Science PhD student specializing in <strong>Embodied AI</strong>. My research bridges high-level symbolic reasoning and low-level sensorimotor control to enable intuitive Human-Robot Interaction &mdash; creating robotic systems that collaborate safely and naturally with people. I actively explore how modern foundation models can be grounded in robotic systems as powerful interfaces for perception and action.</p>
+                </div>
+
+                <div class="hero-advisor">
+                    <span class="advisor-label">Advisor</span>
+                    <a href="https://www.cs.binghamton.edu/~szhang/" target="_blank">Prof. Shiqi Zhang</a>
+                </div>
+
+                <div class="hero-cta">
+                    <a href="cv.pdf" class="btn-primary">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+                        Download CV
+                    </a>
+                    <a href="mailto:aoloo@binghamton.edu" class="btn-secondary">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator" id="scrollIndicator">
+            <span>Scroll</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+    </section>
+
+    <!-- Research -->
+    <section id="research" class="section">
+        <div class="section-container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-label">
+                    <span class="label-number">01</span>
+                    Research Focus
+                </span>
+                <h2 class="section-title">Building Intelligent<br>Mobile Manipulators</h2>
+                <p class="section-subtitle">
+                    My work sits at the intersection of robotics, computer vision, and AI &mdash; with a particular emphasis on their applications in the context of <strong>mobile manipulators</strong>.
                 </p>
             </div>
-            <div class="research-item">
-                <h3 class="paper-title">Semantic-Geometric Fusion for Task and Motion Planning in Dynamic Environments</h3>
-                <p class="authors">
-                    <strong>Austine Oloo</strong>*,
-                    <a href="#" target="_blank">Xinwei Guo</a>*,
-                    <a href="#" target="_blank">Shiqi Zhang</a>
-                </p>
+
+            <div class="research-grid">
+                <div class="research-card glass-card" data-animate="fade-up">
+                    <div class="card-accent"></div>
+                    <div class="card-header">
+                        <div class="card-icon-wrap">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                        </div>
+                        <span class="card-number">01</span>
+                    </div>
+                    <h3 class="card-title">Spatial Intelligence<br>for Robotics</h3>
+                    <p class="card-subtitle">Empowering Robots to Understand the Real World</p>
+                    <p class="card-desc">
+                        Developing methods that enable robots to build rich, semantic understanding of 3D environments &mdash; fusing geometric perception with high-level reasoning so that mobile manipulators can interpret scenes, localize objects, and plan actions grounded in spatial awareness.
+                    </p>
+                    <div class="card-tags">
+                        <span class="tag">3D Scene Understanding</span>
+                        <span class="tag">Semantic Mapping</span>
+                        <span class="tag">Active Perception</span>
+                        <span class="tag">Foundation Models</span>
+                    </div>
+                </div>
+
+                <div class="research-card glass-card" data-animate="fade-up" style="--delay: 0.15s">
+                    <div class="card-accent"></div>
+                    <div class="card-header">
+                        <div class="card-icon-wrap">
+                            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                <path d="M2 17l10 5 10-5"/>
+                                <path d="M2 12l10 5 10-5"/>
+                            </svg>
+                        </div>
+                        <span class="card-number">02</span>
+                    </div>
+                    <h3 class="card-title">Skill Learning<br>for Robotics</h3>
+                    <p class="card-subtitle">Enabling Robots to Transform the Real World</p>
+                    <p class="card-desc">
+                        Building frameworks for robots to acquire, compose, and generalize manipulation skills &mdash; bridging symbolic task planning with learned sensorimotor policies so that mobile manipulators can perform complex, multi-step tasks in unstructured environments.
+                    </p>
+                    <div class="card-tags">
+                        <span class="tag">Task &amp; Motion Planning</span>
+                        <span class="tag">Skill Composition</span>
+                        <span class="tag">Sim-to-Real Transfer</span>
+                        <span class="tag">Human-Robot Interaction</span>
+                    </div>
+                </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
+
+    <!-- Publications -->
+    <section id="publications" class="section section-alt">
+        <div class="section-container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-label">
+                    <span class="label-number">02</span>
+                    Selected Work
+                </span>
+                <h2 class="section-title">Publications</h2>
+            </div>
+
+            <div class="pub-list">
+                <article class="pub-card glass-card" data-animate="fade-up">
+                    <div class="pub-indicator">
+                        <div class="pub-dot"></div>
+                        <div class="pub-line"></div>
+                    </div>
+                    <div class="pub-body">
+                        <h3 class="pub-title">VLM-Grounded Task and Motion Planning With Uncertainty Aware Active Perception</h3>
+                        <div class="pub-authors">
+                            <span class="author-self">Austine Oloo</span>,
+                            <a href="https://www.cs.binghamton.edu/~szhang/" target="_blank">Shiqi Zhang</a>
+                        </div>
+                    </div>
+                    <div class="pub-arrow">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </div>
+                </article>
+
+                <article class="pub-card glass-card" data-animate="fade-up" style="--delay: 0.1s">
+                    <div class="pub-indicator">
+                        <div class="pub-dot"></div>
+                        <div class="pub-line"></div>
+                    </div>
+                    <div class="pub-body">
+                        <h3 class="pub-title">Semantic-Geometric Fusion for Task and Motion Planning in Dynamic Environments</h3>
+                        <div class="pub-authors">
+                            <span class="author-self">Austine Oloo</span>*,
+                            <a href="#" target="_blank">Xinwei Guo</a>*,
+                            <a href="https://www.cs.binghamton.edu/~szhang/" target="_blank">Shiqi Zhang</a>
+                        </div>
+                    </div>
+                    <div class="pub-arrow">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Updates -->
+    <section id="updates" class="section">
+        <div class="section-container">
+            <div class="section-header" data-animate="fade-up">
+                <span class="section-label">
+                    <span class="label-number">03</span>
+                    Latest
+                </span>
+                <h2 class="section-title">News & Updates</h2>
+            </div>
+
+            <div class="updates-grid">
+                <div class="update-card glass-card" data-animate="fade-up">
+                    <div class="update-date-badge">Jan 2026</div>
+                    <p>Teaching Assistant for Intelligent Mobile Robotics</p>
+                </div>
+                <div class="update-card glass-card" data-animate="fade-up" style="--delay: 0.05s">
+                    <div class="update-date-badge">Dec 2025</div>
+                    <p>Successfully defended my Master's thesis</p>
+                </div>
+                <div class="update-card glass-card" data-animate="fade-up" style="--delay: 0.1s">
+                    <div class="update-date-badge">Aug 2025</div>
+                    <p>Teaching Assistant for <a href="https://www.cs.binghamton.edu/~szhang/teaching/25fall-ai/index.html" target="_blank">Introduction to AI</a></p>
+                </div>
+                <div class="update-card glass-card" data-animate="fade-up" style="--delay: 0.15s">
+                    <div class="update-date-badge">Aug 2025</div>
+                    <p>Started PhD in Computer Science at <a href="https://www.binghamton.edu/" target="_blank">Binghamton University</a>, advised by <a href="https://www.cs.binghamton.edu/~szhang/" target="_blank">Prof. Shiqi Zhang</a></p>
+                </div>
+                <div class="update-card glass-card" data-animate="fade-up" style="--delay: 0.2s">
+                    <div class="update-date-badge">Feb 2025</div>
+                    <p>Successfully demonstrated autonomous robot navigation system in complex indoor environments</p>
+                </div>
+                <div class="update-card glass-card" data-animate="fade-up" style="--delay: 0.25s">
+                    <div class="update-date-badge">Aug 2024</div>
+                    <p>Started MSc in Computer Science at <a href="https://www.binghamton.edu/" target="_blank">Binghamton University</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <span class="footer-logo"><span class="logo-bracket">{</span>AO<span class="logo-bracket">}</span></span>
+                    <span class="footer-tagline">Embodied AI Researcher</span>
+                </div>
+                <div class="footer-links">
+                    <a href="mailto:aoloo@binghamton.edu">Email</a>
+                    <a href="https://github.com/aoloo-r" target="_blank">GitHub</a>
+                    <a href="https://www.linkedin.com/in/aoloo-r-oloo" target="_blank">LinkedIn</a>
+                    <a href="https://x.com/aoloo_r?s=11" target="_blank">Twitter/X</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <span>&copy; 2026 Austine R. Oloo. All rights reserved.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
