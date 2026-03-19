@@ -39,6 +39,7 @@ export default function Footer() {
                 label: "LinkedIn",
                 href: "https://www.linkedin.com/in/aoloo-r-oloo",
               },
+              { label: "Scholar", href: "https://scholar.google.com/citations?user=LYSMcY0AAAAJ&hl=en&authuser=1" },
               { label: "Twitter/X", href: "https://x.com/aoloo_r?s=11" },
             ].map((link) => (
               <a
