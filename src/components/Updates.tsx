@@ -3,6 +3,8 @@
 import AnimateIn from "./AnimateIn";
 
 const updates = [
+  { date: "May 2026", text: "Started as Graduate Assistant for SUNY's AI for Public Good program (Summer 2026)" },
+  { date: "May 2026", text: "Co-authored LOCATT: On the Vulnerabilities of Humanoid Locomotion Policies, submitted to CoRL 2026" },
   { date: "Mar 2026", text: "Submitted to IROS 2026: Robot Planning and Situation Handling with Active Perception" },
   { date: "Jan 2026", text: "Teaching Assistant for Intelligent Mobile Robotics" },
   { date: "Dec 2025", text: "Successfully defended my Master\u2019s thesis" },

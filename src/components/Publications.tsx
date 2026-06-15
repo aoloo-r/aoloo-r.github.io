@@ -5,6 +5,23 @@ import { ArrowRight } from "./Icons";
 
 const pubs = [
   {
+    title: "LOCATT: On the Vulnerabilities of Humanoid Locomotion Policies",
+    venue: "CoRL Submission 2026",
+    authors: [
+      { name: "Z. Altaweel" },
+      { name: "M. Nahian" },
+      { name: "Austine Oloo", self: true },
+      { name: "Y. Hayamizu" },
+      { name: "D. Duong" },
+      { name: "X. Wu" },
+      { name: "A. Siraj" },
+      {
+        name: "S. Zhang",
+        href: "https://www.cs.binghamton.edu/~szhang/",
+      },
+    ],
+  },
+  {
     title:
       "VLM-Grounded Task and Motion Planning With Uncertainty Aware Active Perception",
     authors: [
@@ -102,12 +119,27 @@ export default function Publications() {
 
                 {/* Content */}
                 <div className="flex-1 min-w-0">
-                  <h3
-                    className="text-lg font-semibold leading-[1.4] mb-2.5 tracking-[-0.3px]"
-                    style={{ fontFamily: "var(--font-heading)" }}
-                  >
-                    {pub.title}
-                  </h3>
+                  <div className="flex items-start justify-between gap-4 mb-2.5 max-sm:flex-col max-sm:gap-1.5">
+                    <h3
+                      className="text-lg font-semibold leading-[1.4] tracking-[-0.3px]"
+                      style={{ fontFamily: "var(--font-heading)" }}
+                    >
+                      {pub.title}
+                    </h3>
+                    {"venue" in pub && pub.venue && (
+                      <span
+                        className="shrink-0 text-xs font-semibold px-2.5 py-0.5 rounded-full whitespace-nowrap mt-1"
+                        style={{
+                          color: "var(--accent)",
+                          background: "var(--accent-soft)",
+                          border: "1px solid var(--accent-border)",
+                          fontFamily: "var(--font-mono)",
+                        }}
+                      >
+                        {pub.venue}
+                      </span>
+                    )}
+                  </div>
                   <p
                     className="text-sm leading-[1.6]"
                     style={{ color: "var(--text-secondary)" }}
@@ -124,7 +156,7 @@ export default function Publications() {
                           >
                             {a.name}
                           </strong>
-                        ) : (
+                        ) : "href" in a && a.href ? (
                           <a
                             href={a.href}
                             target="_blank"
@@ -134,6 +166,8 @@ export default function Publications() {
                           >
                             {a.name}
                           </a>
+                        ) : (
+                          <span>{a.name}</span>
                         )}
                         {"equal" in a && a.equal && "*"}
                       </span>

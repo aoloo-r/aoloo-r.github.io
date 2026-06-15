@@ -7,6 +7,7 @@ const links = [
   { href: "#research", label: "Research", section: "research" },
   { href: "#publications", label: "Publications", section: "publications" },
   { href: "#updates", label: "Updates", section: "updates" },
+  { href: "#gallery", label: "Gallery", section: "gallery" },
 ];
 
 export default function Navbar() {
