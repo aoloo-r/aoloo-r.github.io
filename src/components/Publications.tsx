@@ -22,6 +22,22 @@ const pubs = [
     ],
   },
   {
+    title: "Robots Actively Handling Situations using VLMs in Open Worlds",
+    venue: "IROS Submission 2026",
+    authors: [
+      { name: "Austine Oloo", self: true },
+      { name: "Z. Altaweel" },
+      { name: "P. Liu" },
+      { name: "Y. Hayamizu" },
+      { name: "C. Paxton" },
+      {
+        name: "S. Zhang",
+        href: "https://www.cs.binghamton.edu/~szhang/",
+      },
+      { name: "X. Zhang" },
+    ],
+  },
+  {
     title:
       "VLM-Grounded Task and Motion Planning With Uncertainty Aware Active Perception",
     authors: [
