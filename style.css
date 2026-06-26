@@ -842,6 +842,20 @@ a:focus-visible {
     letter-spacing: -0.3px;
 }
 
+.pub-title a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s var(--ease);
+}
+.pub-title a:hover { color: var(--accent); }
+
+.pub-venue {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 8px;
+}
+
 .pub-authors {
     font-size: 14px;
     color: var(--text-secondary);
