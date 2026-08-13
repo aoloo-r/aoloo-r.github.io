@@ -23,18 +23,24 @@ const pubs = [
   },
   {
     title: "Robots Actively Handling Situations using VLMs in Open Worlds",
-    venue: "IROS Submission 2026",
+    href: "https://arxiv.org/pdf/2604.26988",
+    venue: "IROS 2026 (Accepted)",
     authors: [
       { name: "Austine Oloo", self: true },
       { name: "Z. Altaweel" },
-      { name: "P. Liu" },
       { name: "Y. Hayamizu" },
+      { name: "P. Liu" },
+      { name: "Y. Ding" },
+      { name: "S. Amiri" },
+      { name: "H. Yang" },
+      { name: "A. Kaminski" },
+      { name: "C. Esselink" },
       { name: "C. Paxton" },
+      { name: "X. Zhang" },
       {
         name: "S. Zhang",
         href: "https://www.cs.binghamton.edu/~szhang/",
       },
-      { name: "X. Zhang" },
     ],
   },
   {
@@ -140,7 +146,18 @@ export default function Publications() {
                       className="text-lg font-semibold leading-[1.4] tracking-[-0.3px]"
                       style={{ fontFamily: "var(--font-heading)" }}
                     >
-                      {pub.title}
+                      {"href" in pub && pub.href ? (
+                        <a
+                          href={pub.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:underline"
+                        >
+                          {pub.title}
+                        </a>
+                      ) : (
+                        pub.title
+                      )}
                     </h3>
                     {"venue" in pub && pub.venue && (
                       <span
