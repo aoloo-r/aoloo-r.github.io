@@ -5,24 +5,7 @@ import { ArrowRight } from "./Icons";
 
 const pubs = [
   {
-    title: "LOCATT: On the Vulnerabilities of Humanoid Locomotion Policies",
-    venue: "CoRL Submission 2026",
-    authors: [
-      { name: "Z. Altaweel" },
-      { name: "M. Nahian" },
-      { name: "Austine Oloo", self: true },
-      { name: "Y. Hayamizu" },
-      { name: "D. Duong" },
-      { name: "X. Wu" },
-      { name: "A. Siraj" },
-      {
-        name: "S. Zhang",
-        href: "https://www.cs.binghamton.edu/~szhang/",
-      },
-    ],
-  },
-  {
-    title: "Robots Actively Handling Situations using VLMs in Open Worlds",
+    title: "Robot Planning and Situation Handling with Active Perception",
     href: "https://arxiv.org/pdf/2604.26988",
     venue: "IROS 2026 (Accepted)",
     authors: [
@@ -46,20 +29,10 @@ const pubs = [
   {
     title:
       "VLM-Grounded Task and Motion Planning With Uncertainty Aware Active Perception",
+    href: "https://search.proquest.com/openview/d9028808d178d84805503ed91556d5b7/1?pq-origsite=gscholar&cbl=18750&diss=y",
+    venue: "Master's Thesis",
     authors: [
       { name: "Austine Oloo", self: true },
-      {
-        name: "Shiqi Zhang",
-        href: "https://www.cs.binghamton.edu/~szhang/",
-      },
-    ],
-  },
-  {
-    title:
-      "Semantic-Geometric Fusion for Task and Motion Planning in Dynamic Environments",
-    authors: [
-      { name: "Austine Oloo", self: true, equal: true },
-      { name: "Xinwei Guo", href: "#", equal: true },
       {
         name: "Shiqi Zhang",
         href: "https://www.cs.binghamton.edu/~szhang/",
@@ -202,7 +175,6 @@ export default function Publications() {
                         ) : (
                           <span>{a.name}</span>
                         )}
-                        {"equal" in a && a.equal && "*"}
                       </span>
                     ))}
                   </p>
