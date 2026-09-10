@@ -28,6 +28,13 @@ const updates = [
   },
 ];
 
+const MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+const toKey = (d: string) => {
+  const [m, y] = d.split(" ");
+  return Number(y) * 12 + MONTHS.indexOf(m);
+};
+const sorted = [...updates].sort((a, b) => toKey(b.date) - toKey(a.date));
+
 export default function Updates() {
   return (
     <section id="updates" className="relative py-[120px] px-10 z-[1] max-md:py-20 max-md:px-5">
@@ -62,7 +69,7 @@ export default function Updates() {
         </AnimateIn>
 
         <div className="grid grid-cols-2 gap-4 max-[900px]:grid-cols-1">
-          {updates.map((item, i) => (
+          {sorted.map((item, i) => (
             <AnimateIn key={i} delay={i * 0.06}>
               <div
                 className="rounded-2xl p-6 transition-all duration-350 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-0.5"

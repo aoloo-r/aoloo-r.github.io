@@ -1,17 +1,23 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const links = [
-  { href: "#home", label: "About", section: "home" },
-  { href: "#research", label: "Research", section: "research" },
-  { href: "#publications", label: "Publications", section: "publications" },
-  { href: "#updates", label: "Updates", section: "updates" },
-  { href: "#gallery", label: "Gallery", section: "gallery" },
+  { href: "/", label: "About", section: "home" },
+  { href: "/research", label: "Research", section: "research" },
+  { href: "/publications", label: "Publications", section: "publications" },
+  { href: "/updates", label: "Updates", section: "updates" },
+  { href: "/gallery", label: "Gallery", section: "gallery" },
 ];
 
 export default function Navbar() {
-  const [active, setActive] = useState("home");
+  const pathname = usePathname();
+  const active =
+    links.find(
+      (l) => l.href !== "/" && pathname.replace(/\/$/, "") === l.href
+    )?.section ?? "home";
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -22,18 +28,8 @@ export default function Navbar() {
   }, []);
 
   useEffect(() => {
-    const sections = document.querySelectorAll("section[id]");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActive(entry.target.id);
-        });
-      },
-      { threshold: 0.25, rootMargin: "-80px 0px -20% 0px" }
-    );
-    sections.forEach((s) => observer.observe(s));
-    return () => observer.disconnect();
-  }, []);
+    setMenuOpen(false);
+  }, [pathname]);
 
   const toggleTheme = () => {
     const isDark =
@@ -57,15 +53,15 @@ export default function Navbar() {
     >
       <div className="flex items-center gap-1 h-[52px] px-3">
         {/* Logo */}
-        <a
-          href="#"
+        <Link
+          href="/"
           className="font-[var(--font-mono)] text-base font-semibold pr-3 transition-colors duration-200"
           style={{ color: "var(--text-primary)", fontFamily: "var(--font-mono)" }}
         >
           <span style={{ color: "var(--accent)", fontWeight: 400 }}>{"{"}</span>
           AO
           <span style={{ color: "var(--accent)", fontWeight: 400 }}>{"}"}</span>
-        </a>
+        </Link>
 
         {/* Desktop Links */}
         <div
@@ -74,7 +70,7 @@ export default function Navbar() {
           style={menuOpen ? { background: "var(--bg-base)" } : {}}
         >
           {links.map((link) => (
-            <a
+            <Link
               key={link.section}
               href={link.href}
               onClick={() => setMenuOpen(false)}
@@ -115,7 +111,7 @@ export default function Navbar() {
                 />
               )}
               {link.label}
-            </a>
+            </Link>
           ))}
         </div>
 

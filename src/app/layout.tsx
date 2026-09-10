@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import { Space_Grotesk, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import CursorGlow from "@/components/CursorGlow";
+import ThemeProvider from "@/components/ThemeProvider";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -23,7 +27,7 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata: Metadata = {
   title: "Austine R. Oloo — Embodied AI Researcher",
   description:
-    "PhD Student at Binghamton University. Researching Spatial Intelligence and Skill Learning for Robotics with applications to mobile manipulators.",
+    "PhD Student at Binghamton University. Building robots that generalize across diverse, long-horizon tasks in complex household environments through robot foundation models, structured world representations, and task and motion planning.",
 };
 
 export default function RootLayout({
@@ -36,7 +40,12 @@ export default function RootLayout({
       <body
         className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable}`}
       >
-        {children}
+        <ThemeProvider>
+          <CursorGlow />
+          <Navbar />
+          <main className="min-h-screen">{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

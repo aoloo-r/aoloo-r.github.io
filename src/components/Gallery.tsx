@@ -5,19 +5,19 @@ import AnimateIn from "./AnimateIn";
 
 const photos = [
   {
-    src: "gallery/lab-tour-1.jpg",
+    src: "/gallery/lab-tour-1.jpg",
     alt: "Demonstrating the humanoid robot to students during the lab tour",
   },
   {
-    src: "gallery/lab-tour-2.jpg",
+    src: "/gallery/lab-tour-2.jpg",
     alt: "Showing the quadruped robot to students during the lab tour",
   },
   {
-    src: "gallery/lab-tour-3.jpg",
+    src: "/gallery/lab-tour-3.jpg",
     alt: "Group photo with the African Road Elementary students and the humanoid robot",
   },
   {
-    src: "gallery/lab-tour-4.jpg",
+    src: "/gallery/lab-tour-4.jpg",
     alt: "Walking students through teleoperating the humanoid robot",
   },
 ];

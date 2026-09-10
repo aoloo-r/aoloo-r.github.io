@@ -9,7 +9,6 @@ import {
   Twitter,
   GoogleScholar,
   FileText,
-  ChevronDown,
 } from "./Icons";
 
 export default function Hero() {
@@ -201,12 +200,23 @@ export default function Hero() {
               <strong style={{ color: "var(--text-primary)", fontWeight: 600 }}>
                 Embodied AI
               </strong>
-              . My research bridges high-level symbolic reasoning and low-level
-              sensorimotor control to enable intuitive Human-Robot Interaction
-              &mdash; creating robotic systems that collaborate safely and
-              naturally with people. I actively explore how modern foundation
-              models can be grounded in robotic systems as powerful interfaces
-              for perception and action.
+              . My research goal is to build robots that generalize across
+              diverse, long-horizon tasks in complex household environments.
+              Toward this goal, I explore{" "}
+              <strong style={{ color: "var(--text-primary)", fontWeight: 600 }}>
+                robot foundation models
+              </strong>
+              ,{" "}
+              <strong style={{ color: "var(--text-primary)", fontWeight: 600 }}>
+                structured world representations
+              </strong>
+              , and{" "}
+              <strong style={{ color: "var(--text-primary)", fontWeight: 600 }}>
+                task and motion planning (TAMP)
+              </strong>{" "}
+              &mdash; bridging high-level symbolic reasoning with low-level
+              sensorimotor control so that robots can perceive, plan, and act
+              reliably alongside people.
             </p>
           </div>
 
@@ -237,7 +247,7 @@ export default function Hero() {
           {/* CTAs */}
           <div className="flex gap-3 flex-wrap max-md:justify-center max-sm:flex-col max-sm:items-stretch">
             <a
-              href="cv.pdf"
+              href="/cv.pdf"
               className="inline-flex items-center gap-2.5 px-7 py-3 text-sm font-semibold rounded-[10px] text-white transition-all duration-300 hover:-translate-y-0.5 max-sm:justify-center"
               style={{
                 background: "var(--accent)",
@@ -282,17 +292,6 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
-      <div
-        className="absolute bottom-8 left-1/2 flex flex-col items-center gap-1.5 text-xs font-medium uppercase tracking-wider opacity-60 max-md:hidden"
-        style={{
-          color: "var(--text-muted)",
-          animation: "bounce-down 2s infinite",
-        }}
-      >
-        <span>Scroll</span>
-        <ChevronDown />
-      </div>
     </section>
   );
 }

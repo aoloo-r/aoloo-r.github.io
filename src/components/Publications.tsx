@@ -31,13 +31,7 @@ const pubs = [
       "VLM-Grounded Task and Motion Planning With Uncertainty Aware Active Perception",
     href: "https://search.proquest.com/openview/d9028808d178d84805503ed91556d5b7/1?pq-origsite=gscholar&cbl=18750&diss=y",
     venue: "Master's Thesis",
-    authors: [
-      { name: "Austine Oloo", self: true },
-      {
-        name: "Shiqi Zhang",
-        href: "https://www.cs.binghamton.edu/~szhang/",
-      },
-    ],
+    authors: [{ name: "Austine Oloo", self: true }],
   },
 ];
 
