@@ -1,7 +1,6 @@
 {
   "name": "aoloo-r.github.io",
   "version": "1.0.0",
-  "main": "script.js",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
