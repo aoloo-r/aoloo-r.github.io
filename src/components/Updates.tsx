@@ -34,6 +34,12 @@ const toKey = (d: string) => {
   return Number(y) * 12 + MONTHS.indexOf(m);
 };
 const sorted = [...updates].sort((a, b) => toKey(b.date) - toKey(a.date));
+const byYear = sorted.reduce<Record<string, typeof updates>>((acc, item) => {
+  const year = item.date.split(" ")[1];
+  (acc[year] ??= []).push(item);
+  return acc;
+}, {});
+const years = Object.keys(byYear).sort((a, b) => Number(b) - Number(a));
 
 export default function Updates() {
   return (
@@ -68,43 +74,67 @@ export default function Updates() {
           </div>
         </AnimateIn>
 
-        <div className="grid grid-cols-2 gap-4 max-[900px]:grid-cols-1">
-          {sorted.map((item, i) => (
-            <AnimateIn key={i} delay={i * 0.06}>
-              <div
-                className="rounded-2xl p-6 transition-all duration-350 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-0.5"
-                style={{
-                  background: "var(--bg-glass)",
-                  backdropFilter: "blur(16px)",
-                  border: "1px solid var(--bg-glass-border)",
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.boxShadow = "var(--shadow-md)";
-                  e.currentTarget.style.borderColor = "var(--accent-border)";
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.boxShadow = "none";
-                  e.currentTarget.style.borderColor = "var(--bg-glass-border)";
-                }}
-              >
-                <span
-                  className="inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full mb-3"
-                  style={{
-                    color: "var(--accent)",
-                    background: "var(--accent-soft)",
-                    border: "1px solid var(--accent-border)",
-                    fontFamily: "var(--font-mono)",
-                  }}
-                >
-                  {item.date}
-                </span>
-                <p
-                  className="text-sm leading-[1.65] [&_a]:font-medium [&_a]:underline-offset-2 hover:[&_a]:underline"
-                  style={{ color: "var(--text-secondary)" }}
-                  dangerouslySetInnerHTML={{ __html: item.text }}
-                />
+        <div className="flex flex-col gap-14">
+          {years.map((year) => (
+            <div key={year}>
+              <AnimateIn>
+                <div className="flex items-center gap-4 mb-6">
+                  <h3
+                    className="text-2xl font-bold tracking-[-0.5px]"
+                    style={{
+                      fontFamily: "var(--font-heading)",
+                      color: "var(--text-primary)",
+                    }}
+                  >
+                    {year}
+                  </h3>
+                  <span
+                    className="h-px flex-1"
+                    style={{ background: "var(--border-strong)" }}
+                  />
+                </div>
+              </AnimateIn>
+
+              <div className="grid grid-cols-2 gap-4 max-[900px]:grid-cols-1">
+                {byYear[year].map((item, i) => (
+                  <AnimateIn key={item.date + item.text} delay={i * 0.06}>
+                    <div
+                      className="rounded-2xl p-6 transition-all duration-350 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-0.5"
+                      style={{
+                        background: "var(--bg-glass)",
+                        backdropFilter: "blur(16px)",
+                        border: "1px solid var(--bg-glass-border)",
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.boxShadow = "var(--shadow-md)";
+                        e.currentTarget.style.borderColor = "var(--accent-border)";
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.boxShadow = "none";
+                        e.currentTarget.style.borderColor = "var(--bg-glass-border)";
+                      }}
+                    >
+                      <span
+                        className="inline-block text-xs font-semibold px-2.5 py-0.5 rounded-full mb-3"
+                        style={{
+                          color: "var(--accent)",
+                          background: "var(--accent-soft)",
+                          border: "1px solid var(--accent-border)",
+                          fontFamily: "var(--font-mono)",
+                        }}
+                      >
+                        {item.date.split(" ")[0]}
+                      </span>
+                      <p
+                        className="text-sm leading-[1.65] [&_a]:font-medium [&_a]:underline-offset-2 hover:[&_a]:underline"
+                        style={{ color: "var(--text-secondary)" }}
+                        dangerouslySetInnerHTML={{ __html: item.text }}
+                      />
+                    </div>
+                  </AnimateIn>
+                ))}
               </div>
-            </AnimateIn>
+            </div>
           ))}
         </div>
       </div>
