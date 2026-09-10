@@ -14,6 +14,7 @@ const cards = [
       "3D Scene Understanding",
       "Semantic Mapping",
       "Active Perception",
+      "Real2Sim",
       "Foundation Models",
     ],
   },
@@ -26,7 +27,7 @@ const cards = [
     tags: [
       "Task & Motion Planning",
       "Skill Composition",
-      "Sim-to-Real Transfer",
+      "Sim2Real",
       "Human-Robot Interaction",
     ],
   },
