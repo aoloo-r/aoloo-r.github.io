@@ -3,11 +3,29 @@
 import AnimateIn from "./AnimateIn";
 import { ArrowRight } from "./Icons";
 
-const pubs = [
+type Pub = {
+  title: string;
+  href?: string;
+  venue?: string;
+  media?: { video?: string; poster: string; alt: string };
+  links?: { label: string; href: string }[];
+  authors: { name: string; self?: boolean; href?: string }[];
+};
+
+const pubs: Pub[] = [
   {
     title: "Robot Planning and Situation Handling with Active Perception",
     href: "https://arxiv.org/pdf/2604.26988",
     venue: "IROS 2026 (Accepted)",
+    media: {
+      video: "/pubs/vap-tamp.mp4",
+      poster: "/pubs/vap-tamp.jpg",
+      alt: "Mobile manipulator using active perception to locate and pick up a cup",
+    },
+    links: [
+      { label: "Project page", href: "https://vap-tamp.github.io/vap-tamp/" },
+      { label: "Paper", href: "https://arxiv.org/abs/2604.26988" },
+    ],
     authors: [
       { name: "Austine Oloo", self: true },
       { name: "Zainab Altaweel" },
@@ -31,6 +49,12 @@ const pubs = [
       "VLM-Grounded Task and Motion Planning With Uncertainty Aware Active Perception",
     href: "https://search.proquest.com/openview/d9028808d178d84805503ed91556d5b7/1?pq-origsite=gscholar&cbl=18750&diss=y",
     venue: "Master's Thesis",
+    links: [
+      {
+        label: "Thesis",
+        href: "https://search.proquest.com/openview/d9028808d178d84805503ed91556d5b7/1?pq-origsite=gscholar&cbl=18750&diss=y",
+      },
+    ],
     authors: [{ name: "Austine Oloo", self: true }],
   },
 ];
@@ -76,7 +100,7 @@ export default function Publications() {
           {pubs.map((pub, i) => (
             <AnimateIn key={i} delay={i * 0.1}>
               <article
-                className="flex items-start gap-5 rounded-2xl p-7 cursor-default transition-all duration-350 ease-[cubic-bezier(0.4,0,0.2,1)] group hover:translate-x-1.5 max-md:p-5"
+                className="flex items-start gap-5 rounded-2xl p-7 cursor-default transition-all duration-350 ease-[cubic-bezier(0.4,0,0.2,1)] group hover:translate-x-1.5 max-md:p-5 max-md:flex-wrap"
                 style={{
                   background: "var(--bg-glass)",
                   backdropFilter: "blur(16px)",
@@ -106,6 +130,39 @@ export default function Publications() {
                   />
                 </div>
 
+                {/* Media */}
+                {pub.media && (
+                  <div
+                    className="shrink-0 w-[220px] aspect-video rounded-xl overflow-hidden max-md:w-full max-md:order-first"
+                    style={{
+                      background: "var(--bg-surface)",
+                      border: "1px solid var(--border)",
+                    }}
+                  >
+                    {pub.media.video ? (
+                      <video
+                        src={pub.media.video}
+                        poster={pub.media.poster}
+                        autoPlay
+                        muted
+                        loop
+                        playsInline
+                        preload="metadata"
+                        aria-label={pub.media.alt}
+                        className="w-full h-full object-cover"
+                      />
+                    ) : (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={pub.media.poster}
+                        alt={pub.media.alt}
+                        loading="lazy"
+                        className="w-full h-full object-cover"
+                      />
+                    )}
+                  </div>
+                )}
+
                 {/* Content */}
                 <div className="flex-1 min-w-0">
                   <div className="flex items-start justify-between gap-4 mb-2.5 max-sm:flex-col max-sm:gap-1.5">
@@ -113,7 +170,7 @@ export default function Publications() {
                       className="text-lg font-semibold leading-[1.4] tracking-[-0.3px]"
                       style={{ fontFamily: "var(--font-heading)" }}
                     >
-                      {"href" in pub && pub.href ? (
+                      {pub.href ? (
                         <a
                           href={pub.href}
                           target="_blank"
@@ -126,7 +183,7 @@ export default function Publications() {
                         pub.title
                       )}
                     </h3>
-                    {"venue" in pub && pub.venue && (
+                    {pub.venue && (
                       <span
                         className="shrink-0 text-xs font-semibold px-2.5 py-0.5 rounded-full whitespace-nowrap mt-1"
                         style={{
@@ -156,7 +213,7 @@ export default function Publications() {
                           >
                             {a.name}
                           </strong>
-                        ) : "href" in a && a.href ? (
+                        ) : a.href ? (
                           <a
                             href={a.href}
                             target="_blank"
@@ -172,6 +229,22 @@ export default function Publications() {
                       </span>
                     ))}
                   </p>
+                  {pub.links && (
+                    <div className="flex flex-wrap gap-x-4 gap-y-1 mt-3">
+                      {pub.links.map((l) => (
+                        <a
+                          key={l.label}
+                          href={l.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-[13px] font-medium underline underline-offset-4 decoration-[var(--accent-border)] hover:decoration-[var(--accent)] transition-colors"
+                          style={{ color: "var(--accent)" }}
+                        >
+                          {l.label}
+                        </a>
+                      ))}
+                    </div>
+                  )}
                 </div>
 
                 {/* Arrow */}
