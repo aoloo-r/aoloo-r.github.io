@@ -3,6 +3,10 @@
 import AnimateIn from "./AnimateIn";
 
 const updates = [
+  {
+    date: "Sep 2026",
+    text: 'Best Paper Award at the Full-Shift Robot Co-Workers Workshop, IROS 2026, for <a href="https://arxiv.org/pdf/2604.26988" target="_blank" rel="noopener noreferrer">Robot Planning and Situation Handling with Active Perception</a>',
+  },
   { date: "May 2026", text: "Started as Graduate Assistant for SUNY's AI for Public Good program (Summer 2026)" },
   {
     date: "Jun 2026",

@@ -7,6 +7,7 @@ type Pub = {
   title: string;
   href?: string;
   venue?: string;
+  award?: string;
   media?: { video?: string; poster: string; alt: string };
   links?: { label: string; href: string }[];
   authors: { name: string; self?: boolean; href?: string }[];
@@ -17,6 +18,7 @@ const pubs: Pub[] = [
     title: "Robot Planning and Situation Handling with Active Perception",
     href: "https://arxiv.org/pdf/2604.26988",
     venue: "IROS 2026 (Accepted)",
+    award: "Best Paper Award \u2014 Full-Shift Robot Co-Workers Workshop, IROS 2026",
     media: {
       video: "/pubs/vap-tamp.mp4",
       poster: "/pubs/vap-tamp.jpg",
@@ -197,6 +199,22 @@ export default function Publications() {
                       </span>
                     )}
                   </div>
+                  {pub.award && (
+                    <div className="mb-2.5">
+                      <span
+                        className="inline-flex items-center gap-1.5 text-xs font-semibold px-2.5 py-0.5 rounded-full"
+                        style={{
+                          color: "var(--award)",
+                          background: "var(--award-soft)",
+                          border: "1px solid var(--award-border)",
+                          fontFamily: "var(--font-mono)",
+                        }}
+                      >
+                        <span aria-hidden="true">&#127942;</span>
+                        {pub.award}
+                      </span>
+                    </div>
+                  )}
                   <p
                     className="text-sm leading-[1.6]"
                     style={{ color: "var(--text-secondary)" }}
